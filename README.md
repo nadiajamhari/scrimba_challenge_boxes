@@ -1,7 +1,9 @@
-# Getting Started with Create React App
+# Demo
+link - demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# About
 
+This project is a practice from Scrimba to practise about change state for array
 ## Available Scripts
 
 In the project directory, you can run:
