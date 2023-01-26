@@ -14,8 +14,8 @@ code {
 
 .box {
   border: 1px solid black;
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   display: inline-block;
   margin: 0.2rem;
   border-radius: 10px;
