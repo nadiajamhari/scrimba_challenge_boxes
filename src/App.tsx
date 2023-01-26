@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Box from "./components/box/box";
+import { BoxData } from "./components/box/boxItem";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [boxList, setBoxList] = useState(BoxData);
+  const toggleOnOff = (id: Number) => {
+    setBoxList((prevBoxList) => {
+      return prevBoxList.map((box) => {
+        return box.id === id ? { ...box, on: !box.on } : box;
+      });
+    });
+  };
+  const boxes =
+    boxList.length > 0 &&
+    boxList.map((eachData) => (
+      <Box
+        on={eachData.on}
+        toggleOnOff={() => {
+          toggleOnOff(eachData.id);
+        }}
+      />
+    ));
+  return <div className="App">{boxes}</div>;
 }
 
 export default App;
